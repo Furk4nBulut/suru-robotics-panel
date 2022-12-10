@@ -1,0 +1,83 @@
+<%- include('partials/_header') %>
+    <div class="content-wrapper">
+        <br>
+        <div class="container-fluid">
+
+        </div>
+        <% for(let i=0;i< iha.length; i++){ %>
+            <form method="POST" action="/location-update/<%= iha[i]._id %>?_method=PUT">
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <%= iha[i].name %>
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3">
+                                <label for="exampleInput">
+                                    <%= iha[i].name %> X Konumu
+                                </label>
+                                <input name="x" type="text" class="form-control" value="<%= iha[i].x %>">
+                            </div>
+                            <div class="col-3">
+                                <label for="exampleInput">
+                                    <%= iha[i].name %> Y Konumu
+                                </label>
+                                <input name="y" type="text" class="form-control" value="<%= iha[i].y %>">
+                            </div>
+                            <div class="col-3">
+                                <label for="exampleInput">
+                                    <%= iha[i].name %> Z Konumu
+                                </label>
+                                <input name="z" type="text" class="form-control" value="<%= iha[i].z %>">
+                            </div>
+                            <button type="submit" class="btn btn-success">Güncelle</button>
+                            <hr style="color: black;">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <% } %>
+
+                <% for(let i=0;i< ika.length; i++){ %>
+                    <form method="POST" action="/location-update/<%= ika[i]._id %>?_method=PUT">
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    <%= ika[i].name %>
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <label for="exampleInput">
+                                            <%= ika[i].name %> X Konumu
+                                        </label>
+                                        <input name="x" type="text" class="form-control" value="<%= ika[i].x %>">
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="exampleInput">
+                                            <%= ika[i].name %> Y Konumu
+                                        </label>
+                                        <input name="y" type="text" class="form-control" value="<%= ika[i].y %>">
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="exampleInput">
+                                            <%= ika[i].name %> Z Konumu
+                                        </label>
+                                        <input name="z" type="text" class="form-control" value="<%= ika[i].z %>">
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Güncelle</button>
+                                    <hr style="color: black;">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <% } %>
+
+
+
+    </div>
+    </div>
+    <%- include('partials/_footer') %>
