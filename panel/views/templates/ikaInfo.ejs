@@ -1,0 +1,60 @@
+<%- include('partials/_header') %>
+    <div class="content-wrapper">
+        <br>
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">İKA'lar hakkında bilgiler</h3>
+                            <div class="card-tools">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" name="table_search" class="form-control float-right"
+                                        placeholder="Search">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Adı</th>
+                                        <th>X konumu</th>
+                                        <th>Y konumu</th>
+                                        <th>Z konumu</th>
+                                        <th>Engel X</th>
+                                        <th>Engel Y</th>
+                                        <th>Engel Z</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(let i=0; i< ika.length; i++){ %>
+                                    <tr>
+                                        <td><%= ika[i].name %></td>
+                                        <td><%= ika[i].x %></td>
+                                        <td><%= ika[i].y %></td>
+                                        <td><%= ika[i].z %></td>
+                                        <td><%= ika[i].e_x %></td>
+                                        <td><%= ika[i].e_y %></td>
+                                        <td><%= ika[i].e_z %></td>
+                                    </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/_footer') %>
